@@ -35,4 +35,38 @@
 --drop table in sql
 -- DROP TABLE students_info;
 
+CREATE Table users (
+    user_id SERIAL PRIMARY KEY,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
 
+
+
+CREATE Table user_1 (
+     user_id SERIAL PRIMARY KEY,
+     username VARCHAR(255) NOT NULL UNIQUE,
+     email VARCHAR(255) NOT NULL UNIQUE,
+     age INT DEFAULT 18  
+)
+
+INSERT INTO user_1  VALUES 
+(1, 'john_doe', 'VXt8A@example.com', 25),
+(2, 'jane_smith', '6Bd1o@example.com', 30),
+(3, 'alice_jones', 'mHr6r@example.com', 28),
+(4, 'bob_brown', 'hD3Pn@example.com', 35),
+(5, 'charlie_white', 'OYBdU@example.com', 40)
+
+-- update table values
+UPDATE user_1 SET username = 'mohi' ,email = 'mohiu5204@gmail.com'  WHERE user_id = 1; // Update username, email for user_id 1
+
+
+
+
+SELECT * FROM user_1; // Display all records from user_1 table
+
+-- SELECT username FROM users; // Display only the username column from users table
+
+DROP TABLE user_1;
