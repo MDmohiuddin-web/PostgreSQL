@@ -59,14 +59,27 @@ INSERT INTO user_1  VALUES
 (4, 'bob_brown', 'hD3Pn@example.com', 35),
 (5, 'charlie_white', 'OYBdU@example.com', 40)
 
+RETURNING *;
 -- update table values
 UPDATE user_1 SET username = 'mohi' ,email = 'mohiu5204@gmail.com'  WHERE user_id = 1; // Update username, email for user_id 1
 
 
 
 
+-- truncate its delete all records without deleting the table
+TRUNCATE TABLE user_1; // Delete all records from user_1 table
+DROP TABLE user_1;
 SELECT * FROM user_1; // Display all records from user_1 table
 
 -- SELECT username FROM users; // Display only the username column from users table
 
 DROP TABLE user_1;
+
+-- alter table to add a new column
+-- add a new column ,change the data type of an existing column, and drop a column
+
+ALTER TABLE user_1
+ADD COLUMN password VARCHAR(255) DEFAULT 'password' NOT NULL;
+
+
+SELECT * FROM user_1; // Display all records from user_1 table
